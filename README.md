@@ -1,7 +1,7 @@
 # Insane 2
 VideoGame made entirely in C++ and Allegro 2D. All the assets and animations are done by code.
 
-The pointer, double buffer, particle system, camera, enemies behavior, collision detection, timer and FPS counter were all made by hand.
+The pointer, double buffer, particle system, camera, enemies behavior, collision detection, timer and FPS counter were all made from scratch.
 
 
 
