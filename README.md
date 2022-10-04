@@ -1,5 +1,7 @@
 # Insane2
-VideoGame made entirely in C++ and Allegro 2D. All the assets and animations are done 100% by code.
+VideoGame made entirely in C++ and Allegro 2D. All the assets and animations are done by code.
+
+The pointer, double buffer, particle systems, camera and collision detection were all made by hand.
 
 <p align="center">
     <img 
@@ -8,3 +10,4 @@ VideoGame made entirely in C++ and Allegro 2D. All the assets and animations are
         style="max-width:800px;width:100%"
     >
 </p>
+
