@@ -2,8 +2,10 @@
 VideoGame made entirely in C++ and Allegro 2D. All assets and animations are done by code.
 
 The fun was using no videogame engine.. the library just let you draw primitives (or pixels) directly to the videocard memory. The pointer, double buffer, <a href="https://github.com/Ni7ram/ParticleEmitter">particle system</a>, camera, enemies behavior, collision detection, timer and FPS counter were all made from scratch.
-
-
+.
+.
+.
+.
 
 
 
