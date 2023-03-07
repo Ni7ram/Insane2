@@ -10,7 +10,7 @@
         LISTA DE MEJORAS/TO DO LIST
 /*******************************************
 /*---------------------------------------------------------------------------.
-*  - Que el fondo se mueva bien (no sea estático).                     | [X] | 
+*  - Que el fondo se mueva bien (no sea estï¿½tico).                     | [X] | 
 *  - Efecto de onda expansiva (es una explosion grande en realidad).   | [X] |
 *  - IA de los enemigos.                                               | [ ] |
 *  - Que no se dibuje lo que esta afuera del viewport (funcion en VP). | [ ] |
@@ -24,7 +24,7 @@
 *    a medida que matas).                                              |     |
 *  - Hacer andar los FPS.                                              | [X] |
 *  - Hacer que una ventana te pregunte si queres jugar en fullscreen.  | [ ] |
-*----------------------------------------------------------------------------´
+*----------------------------------------------------------------------------ï¿½
 
 /************************
 INCLUDES/GLOBAL CONSTANTS
@@ -105,7 +105,7 @@ vector <Enemy*>  enemy;
 vector <Bullet*> shockWave;
 
 //GRAPHICS
-BITMAP *Buffer;
+ALLEGRO_BITMAP *Buffer;
 
 //KEYS
 bool F4;           //EFFECTS SWITCH
@@ -149,8 +149,8 @@ ALLEGRO's DEFAULT METHODS
 
 void init() {
 	int depth, res;
-	allegro_init();
-	depth = desktop_color_depth();
+	al_init();
+	depth = xdesktop_color_depth();
 	if (depth == 0) depth = 32;
 	set_color_depth(depth);
 	res = set_gfx_mode(GFX_AUTODETECT_WINDOWED, SCREEN_WIDTH, SCREEN_HEIGHT, 0, 0);
@@ -174,7 +174,7 @@ void deinit(){
 
 void createEntities(){     
     timer.init();
-    Buffer = create_bitmap(SCREEN_WIDTH, SCREEN_HEIGHT);
+    Buffer = al_create_bitmap(SCREEN_WIDTH, SCREEN_HEIGHT);
 };
 
 void addEnemies(int Number, int evilness){
@@ -186,7 +186,7 @@ void addEnemies(int Number, int evilness){
 void checkInput(){//ORDENAR TODO ESTE METODO (clase inputManager?) [que funcione como un state, en el sentido en que nada mas llama a cosas de aca]
     if (mouse_b & 1 && !SHOOT) shoot(); SHOOT = true;              
     
-    if (key[KEY_SPACE] && !BOMB_RELEASE){ //CHECKEAR SI TIENE BOMBAS DISPONIBLES
+    if (key[ALLEGRO_KEY_SPACE] && !BOMB_RELEASE){ //CHECKEAR SI TIENE BOMBAS DISPONIBLES
         if (charge == minBomb || cantBombs){
             blinked = false;
             PLAYING      = false;
@@ -201,25 +201,25 @@ void checkInput(){//ORDENAR TODO ESTE METODO (clase inputManager?) [que funcione
     }
     
     //CHANGE WEAPONS
-    if (key[KEY_1]) weapon = 1; //PISTOL
-    if (key[KEY_2] && WEAP2) weapon = 2; //SHOTGUN
-    if (key[KEY_3] && WEAP3) weapon = 3; //INSANE
+    if (key[ALLEGRO_KEY_1]) weapon = 1; //PISTOL
+    if (key[ALLEGRO_KEY_2] && WEAP2) weapon = 2; //SHOTGUN
+    if (key[ALLEGRO_KEY_3] && WEAP3) weapon = 3; //INSANE
     //-CHANGE WEAPONS-
     
-    if (key[KEY_F4]){
+    if (key[ALLEGRO_KEY_F4]){
         if (!F4){
             F4 = true;
             EFFECTS = !EFFECTS;
         }
     }
     
-    if (key[KEY_F11] && !F11)CLEAN_BUFFER = !CLEAN_BUFFER; F11 = true;
+    if (key[ALLEGRO_KEY_F11] && !F11)CLEAN_BUFFER = !CLEAN_BUFFER; F11 = true;
     
         //-KEY RELEASES-//
-    if (!key[KEY_F4])   F4           = false;
-    if (!key[KEY_SPACE])BOMB_RELEASE = false;
+    if (!key[ALLEGRO_KEY_F4])   F4           = false;
+    if (!key[ALLEGRO_KEY_SPACE])BOMB_RELEASE = false;
     if (!(mouse_b & 1)) SHOOT        = false;
-    if (!key[KEY_F11])  F11          = false;
+    if (!key[ALLEGRO_KEY_F11])  F11          = false;
 };
 
 void process(){

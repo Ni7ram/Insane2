@@ -1,0 +1,9 @@
+{
+    "workbench.activityBar.visible": true,
+    "workbench.sideBar.location": "left",
+    "workbench.statusBar.visible": true,
+    "workbench.tips.enabled": true,
+    "files.associations": {
+        "vector": "cpp"
+    }
+}
